@@ -1,0 +1,44 @@
+<template>
+<!-- should wrap all pages with IonPage component -->
+  <ion-page>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button :default-href="pageDefaultBackLink"></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{ pageTitle }}</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <slot></slot>
+    </ion-content>
+  </ion-page>
+</template>
+
+<script>
+import { 
+  IonPage, 
+  IonToolbar, 
+  IonHeader, 
+  IonTitle, 
+  IonContent,
+  IonBackButton,
+  IonButtons } from '@ionic/vue';
+
+export default {
+  components: {
+    IonPage,
+    IonToolbar,
+    IonHeader,
+    IonTitle,
+    IonContent,
+    IonBackButton,
+    IonButtons
+  },
+  props: [
+    'pageTitle',
+    'pageDefaultBackLink'
+  ]
+  
+}
+</script>
