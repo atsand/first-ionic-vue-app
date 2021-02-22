@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "first-ionic-vue-app",
+  "appId": "com.atsand.firstionicapp",
+  "appName": "First Ionic App",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "dist",

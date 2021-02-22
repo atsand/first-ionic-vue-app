@@ -1,4 +1,5 @@
 import { createStore } from 'vuex';
+import { v4 as uuidv4 } from 'uuid';
 
 const store = createStore({
   state() {
@@ -24,6 +25,23 @@ const store = createStore({
         }
       ]
     };
+  },
+  mutations: {
+    addMemory(state, memoryData) {
+      const newMemory = {
+        id: uuidv4(),
+        title: memoryData.title,
+        image: memoryData.image,
+        description: memoryData.description,
+      };
+
+      state.memories.unshift(newMemory);
+    }
+  },
+  actions: {
+    addMemory(context, memoryData){
+      context.commit('addMemory', memoryData);
+    }
   },
   getters: {
     memories(state) {
